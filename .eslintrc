@@ -1,0 +1,15 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "strict": 0,
+    "no-console": 0,
+    "semi": ["error", "never"],
+    "indent": ["error", 2],
+    "func-call-spacing": ["error", "never"]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "exchange-bittrex-public-api",
+  "description": "Access public endpoints, to access market prices, from the Cryptocurrency exchange Bittrex, using Promises.",
+  "version": "1.0.0",
+  "private": false,
+  "author": "Reinaldo Haynes (https://github.com/ReyHaynes)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReyHaynes/exchange-bittrex-public-api/issues"
+  },
+  "homepage": "https://github.com/ReyHaynes/exchange-bittrex-public-api#readme",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "npm run test && npm run build:pre && npm run build:create",
+    "build:pre": "rm -rf build",
+    "build:create": "babel -D src -d build",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "eslint src/*.js __test__/*.js",
+    "test:unit": "babel-node ./node_modules/.bin/isparta cover _mocha -- ./__test__/*",
+    "start": "babel-node ./src/index.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReyHaynes/exchange-bittrex-public-api.git"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "bittrex",
+    "bitcoin",
+    "exchange",
+    "price"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.13.0",
+    "isparta": "^4.0.0",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "querystring": "^0.2.0"
+  }
+}

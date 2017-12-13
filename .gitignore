@@ -1,0 +1,8 @@
+.git
+.hg
+.svn
+.DS_Store
+
+node_modules
+coverage
+build
