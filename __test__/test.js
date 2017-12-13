@@ -103,7 +103,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
 
   it("Cannot get non-existent or errored endpoint '/public/getmarke': getEndpoint(path, query)",
     mochaAsync(async () => {
-      const { success, result } = await bittrex.getEndpoint('/public/getmarke')
+      const { success } = await bittrex.getEndpoint('/public/getmarke')
 
       expect(success).to.be.equal(false)
     })
