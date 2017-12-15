@@ -1,7 +1,7 @@
 {
   "name": "exchange-bittrex-public-api",
   "description": "Access public endpoints, to access market prices, from the Cryptocurrency exchange Bittrex, using Promises.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "author": "Reinaldo Haynes (https://github.com/ReyHaynes)",
   "license": "MIT",
