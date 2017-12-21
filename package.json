@@ -18,7 +18,7 @@
     "test:lint": "eslint src/*.js __test__/*.js",
     "test:unit": "babel-node ./node_modules/.bin/isparta cover _mocha -- ./__test__/*",
     "start": "babel-node ./src/index.js",
-    "prepublish": "npm run test && npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
