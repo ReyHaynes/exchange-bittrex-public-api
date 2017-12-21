@@ -1,5 +1,7 @@
 # Bittrex Public API (Node)
 
+[![Build Status](https://travis-ci.org/ReyHaynes/exchange-bittrex-public-api.svg?branch=master)](https://travis-ci.org/ReyHaynes/exchange-bittrex-public-api)
+
 This package interacts with the public REST API endpoints for the Bittrex Exchange that require no authentication using `Promises`.
 
 With this package, you should be able to get access to:
@@ -56,28 +58,16 @@ Responses should return a `success` and `result` property. Successful responses 
 
 ### Methods Available
 
-- `.getMarkets()` - Used to get the open and available trading markets at Bittrex along with other meta data.
-
-- `getCurrencies()` - Used to get all supported currencies at Bittrex along with other meta data.
-
-- `getTicker(pair)` - Used to get the current tick values for a market.
-  - `pair` - `@string` Market Pair (ex: BTC-LTC)
-
-- `getMarketSummaries()` - Used to get the last 24 hour summary of all active exchanges.
-
-- `getMarketSummary(pair)` - Used to get the last 24 hour summary of all active exchanges.
-  - `pair` - `@string` Market Pair (ex: BTC-LTC)
-
-- `getOrderBook(pair, type)` - Used to get retrieve the order-book for a given market.
-  - `pair` - `@string` Market Pair (ex: BTC-LTC)
-  - `type` - `@string` Buy / Sell / Both
-
-- `getMarketHistory(pair)` - Used to retrieve the latest trades that have occurred for a specific market.
-  - `pair` - `@string` Market Pair (ex: BTC-LTC)
-
-- `getEndpoint(path, query)` - Used to get any additional endpoint that might get added in the future.
-  - `path` - `@string` Custom path to an endpoint (ex: `/public/markets`)
-  - `query` - `@object` Custom parameters to include (ex: `{ market: 'BTC-LTC' }`)
+| Method | Description |
+| -- | -- |
+| `getMarkets()` | Used to get the open and available trading markets at Bittrex along with other meta data. |
+| `getCurrencies()` | Used to get all supported currencies at Bittrex along with other meta data. |
+| `getTicker(pair)` | Used to get the current tick values for a market.<li>`pair` - `@string` Market Pair (ex: BTC-LTC)</li> |
+| `getMarketSummaries()` | Used to get the last 24 hour summary of all active exchanges. |
+| `getMarketSummary(pair)` | Used to get the last 24 hour summary of a pair.<li>`pair` - `@string` Market Pair (ex: BTC-LTC)</li> |
+| `getOrderBook(pair, type)` | Used to get retrieve the order-book for a given market.<li>`pair` - `@string` Market Pair (ex: BTC-LTC)</li><li>`type` - `@string` Buy / Sell / Both</li> |
+| `getMarketHistory(pair)` | Used to retrieve the latest trades that have occurred for a specific market.<li>`pair` - `@string` Market Pair (ex: BTC-LTC)</li> |
+| `getEndpoint(path, query)` | Used to get any additional endpoint that might get added in the future.<li>`path` - `@string` Custom path to an endpoint (ex: `/public/markets`)</li><li>`query` - `@object` Custom parameters to include (ex: `{ market: 'BTC-LTC' }`)</li> |
 
 ### Contribute
 
