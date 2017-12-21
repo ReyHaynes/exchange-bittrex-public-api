@@ -4,6 +4,7 @@ import Bittrex from '../src'
 const bittrex = new Bittrex()
 
 const WAITTIME = 1000
+const TIMEOUT = 3000
 
 /* istanbul ignore next */
 const mochaAsync = (fn) => {
@@ -30,7 +31,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get currencies: getCurrencies()",
     mochaAsync(async () => {
@@ -40,7 +41,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get ticker BTC-LTC pair: getTicker(pair)",
     mochaAsync(async () => {
@@ -49,7 +50,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(success).to.be.equal(true)
       expect(result).to.be.an('object')
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get overall market summaries: getMarketSummaries()",
     mochaAsync(async () => {
@@ -59,7 +60,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get BTC-LTC pair market summary: getMarketSummary(pair)",
     mochaAsync(async () => {
@@ -69,7 +70,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get 'buy' side BTC-LTC pair order book: getOrderBook(pair, type)",
     mochaAsync(async () => {
@@ -79,7 +80,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get BTC-LTC pair market history: getMarketHistory(pair)",
     mochaAsync(async () => {
@@ -89,7 +90,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Can get markets using explicit endpoint '/public/getmarkets': getEndpoint(path, query)",
     mochaAsync(async () => {
@@ -99,7 +100,7 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
       expect(result).to.be.an('array')
       expect(result.length).to.be.above(0)
     })
-  )
+  ).timeout(TIMEOUT)
 
   it("Cannot get non-existent or errored endpoint '/public/getmarke': getEndpoint(path, query)",
     mochaAsync(async () => {
@@ -107,5 +108,5 @@ describe(`# Bittrex Public API Test (${WAITTIME}ms wait per test)`, function() {
 
       expect(success).to.be.equal(false)
     })
-  )
+  ).timeout(TIMEOUT)
 })
