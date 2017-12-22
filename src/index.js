@@ -3,6 +3,7 @@ import axios from 'axios'
 import querystring from 'querystring'
 
 export default class BittrexPublicAPI {
+  /* istanbul ignore next */
   constructor({ baseURL } = { baseURL: 'https://bittrex.com/api/v1.1' }) {
     this.api = axios.create({ baseURL })
   }
@@ -73,7 +74,8 @@ export default class BittrexPublicAPI {
  *  Private Function(s)
  * * * * */
 
-const getRequest = async ({ api, path, query = {} }) => {
+/* istanbul ignore next */
+async function getRequest ({ api, path, query = {} }) {
   try {
     const { data } = await api.get(path + '?' + querystring.stringify(query))
     return {
